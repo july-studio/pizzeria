@@ -1,0 +1,220 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-accent-paragraph);
+  background-color: var(--color-bg);
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --color-primary: #fff3e5;
+  --color-bg: #fff3e5;
+  --color-secondary: #9c280b;
+  --color-accent: #2e5232;
+  --color-accent-paragraph: rgba(26, 59, 22, 0.87);
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--color-primary);
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  line-height: 1.44;
+}
+
+p {
+  font-size: inherit;
+  line-height: 1.6;
+  color: var(--color-primary);
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v31-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v31-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/montserrat-v31-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/montserrat-v31-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/montserrat-v31-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+section {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  background: var(--color-primary);
+  padding: 1em 0;
+  max-height: 11vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-bottom-left-radius: 70% 1.8rem;
+  border-bottom-right-radius: 70% 1.8rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+.header__logo {
+  width: 8rem;
+  height: auto;
+}
+
+.lang-switch {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0.9rem 0.9rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+.lang-btn:hover {
+  opacity: 1;
+  color: var(--color-secondary);
+}
+.lang-btn.active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.separator {
+  color: var(--color-accent);
+  text-decoration: none;
+  opacity: 0.6;
+  font-size: 0.2rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav__link {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav__link--button {
+  background: #fff;
+  color: #000;
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+.nav__item + .nav__item {
+  margin-left: 1em;
+}
+
+.hero {
+  height: 100vh;
+  height: 100dvh;
+  padding: 0 10dvh;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvYmFzZS9fYmFzZS5zY3NzIiwiLi4vc2Fzcy9iYXNlL190eXBvZ3JhcGh5LnNjc3MiLCIuLi9zYXNzL2xheW91dC9fZ3JpZC5zY3NzIiwiLi4vc2Fzcy9sYXlvdXQvX2hlYWRlci5zY3NzIiwiLi4vc2Fzcy9sYXlvdXQvX25hdmlnYXRpb24uc2NzcyIsIi4uL3Nhc3MvcGFnZXMvX2hvbWUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFJQTtBQUFBO0FBQUE7RUFHRTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTs7O0FBT0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBRUE7RUFDQTs7O0FDMUNGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtFQU1FO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7OztBQUdGO0VBQ0U7OztBQUdGO0VBQ0U7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTs7O0FBT0Y7RUFDRTtFQUNBO0VBQ0E7OztBQVlGO0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVGO0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVGO0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVGO0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVGO0FBQ0E7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQ3hGRjtFQUNFO0VBQ0E7OztBQUtGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7OztBQ1RGO0VBQ0U7RUFDQTtFQUVBO0VBQ0E7RUFFQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBR0E7RUFDQTtFQUNBO0VBRUE7RUFNQTtFQUNBO0VBRUE7O0FBRUE7RUFDRTtFQUNBOzs7QUFRSjtFQUNFO0VBQ0E7RUFDQTtFQUNBOzs7QUFHRjtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7O0FDOUVGO0VBQ0U7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBRUE7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7RUFDQTs7QUFDQTtFQUNFO0VBQ0E7RUFDQTtFQUNBOztBQUlKO0VBQ0U7OztBQzNCSjtFQUNFO0VBQ0E7RUFDQSIsImZpbGUiOiJzdHlsZS5wcmVmaXguY3NzIiwic291cmNlUm9vdCI6IiJ9 */

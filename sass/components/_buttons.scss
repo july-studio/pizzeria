@@ -1,0 +1,84 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--color-secondary);
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  padding: 1rem 2.5rem;
+  border-radius: 22px;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.05);
+  max-height: 3.4rem;
+}
+
+.btn--secondary {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+////////////////////////////////
+/////////// WHATSAPP ///////////
+////////////////////////////////
+
+.btn--whatsapp {
+  // 1. Layout & Positionierung
+  position: fixed;
+  display: flex; // flex ist besser als inline-flex hier zum Zentrieren
+  justify-content: center;
+  align-items: center;
+  right: 2.5rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom));
+  z-index: 998;
+
+  // 2. Aussehen (Shape & Color)
+  width: 5rem;
+  height: 5rem;
+  background-color: #33693e; // Dein Grün
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); // filter: drop-shadow ist teurer für die Performance
+  cursor: pointer; // Damit man sieht, dass es klickbar ist
+
+  // 3. Startzustand (Versteckt)
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none; // WICHTIG: Verhindert "Geister-Klicks" wenn unsichtbar
+
+  // 4. Animation
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  // 5. Zustand: Sichtbar (wird vom JS hinzugefügt: class="btn--whatsapp is-visible")
+  &.is-visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+
+    // Hover & Active gehören hier rein, damit sie nur gehen, wenn der Button da ist
+    &:hover {
+      background-color: lighten(#33693e, 5%);
+    }
+
+    &:active {
+      transform: scale(0.95); // Drück-Effekt auf dem ganzen Kreis
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  // 6. Das Icon im Inneren (Nestings sind in SCSS super!)
+  .icon__whatsapp {
+    width: 45%; // Icon Größe relativ zum Kreis
+    height: auto;
+    display: block;
+    fill: #ffffff; // Icon sollte weiß sein auf grünem Grund (oder $color-primary wenn das weiß ist)
+    transition: transform 0.2s ease; // Falls du das Icon separat animieren willst
+
+    // Hinweis: Active/Hover macht man meistens auf dem Parent (.btn--whatsapp),
+    // nicht auf dem Icon selbst, da die Klickfläche der Kreis ist.
+  }
+}

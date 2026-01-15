@@ -1,0 +1,48 @@
+///////////////////////////
+// --- GLOBAL SETTINGS --- //
+///////////////////////////
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-accent-paragraph);
+  background-color: var(--color-bg);
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+///////////////////////////
+// --- COLOR PALETTE --- //
+///////////////////////////
+
+:root {
+  --color-primary: #fff3e5; // Text
+  --color-bg: #fff3e5; // Hintergrund
+  --color-secondary: #9c280b; // Buttons, CTA, Highlights, BG
+  --color-accent: #2e5232; // Headings, Sublines
+  --color-accent-paragraph: rgba(26, 59, 22, 0.87); // Paragraph Text
+
+  --color-white: #fff;
+  --color-black: #000;
+}

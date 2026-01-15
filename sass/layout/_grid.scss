@@ -1,0 +1,52 @@
+// --- Sections ---
+
+section {
+  width: 100%; // Geht immer über die volle Breite (für Hintergrundfarben)
+  padding: 5rem 0;
+}
+
+// --- Container für ganzen Bildchirm ---
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px; // Auf Desktop nicht breiter als das
+  margin: 0 auto; // Zentriert den Block in der Mitte
+  padding: 0 1.5rem; // Dein "Sicherheitsabstand" zum Handy-Rand (Links/Rechts)
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+///////////////////////////////////////
+
+// .wrapper {
+//   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+// }
+
+// .container {
+//   margin: 0 auto;
+//   width: min(80%, 1100px);
+// }
+
+// .row {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
+/////// EXTRAS ///////
+
+// .section-grid {
+//   display: grid;
+//   gap: 1.5rem;
+//   grid-template-columns: repeat(4, 1fr);
+//   padding: 2rem;
+//   width: min(95%, 70rem);
+//   margin-inline: auto;
+// }
+
+// .grid-col-span-2 {
+//   grid-column: span 2;
+// }

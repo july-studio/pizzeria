@@ -1,0 +1,350 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-accent-paragraph);
+  background-color: var(--color-bg);
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --color-primary: #fff3e5;
+  --color-bg: #fff3e5;
+  --color-secondary: #9c280b;
+  --color-accent: #2e5232;
+  --color-accent-paragraph: rgba(26, 59, 22, 0.87);
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  line-height: 1.44;
+}
+
+p {
+  font-size: inherit;
+  line-height: 1.6;
+  color: var(--color-primary);
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v31-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v31-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/montserrat-v31-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/montserrat-v31-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* montserrat-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/montserrat-v31-latin-300.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--color-secondary);
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  padding: 1rem 2.5rem;
+  border-radius: 22px;
+  font-size: 1.125rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.05);
+  max-height: 3.4rem;
+}
+
+.btn--secondary {
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+}
+
+.btn--whatsapp {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 2.5rem;
+  bottom: calc(2rem + env(safe-area-inset-bottom));
+  z-index: 998;
+  width: 5rem;
+  height: 5rem;
+  background-color: #33693e;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn--whatsapp.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.btn--whatsapp.is-visible:hover {
+  background-color: rgb(59.3365384615, 122.1634615385, 72.1346153846);
+}
+.btn--whatsapp.is-visible:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+.btn--whatsapp .icon__whatsapp {
+  width: 45%;
+  height: auto;
+  display: block;
+  fill: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+section {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  background: var(--color-primary);
+  padding: 1em 0;
+  max-height: 11vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-bottom-left-radius: 70% 1.8rem;
+  border-bottom-right-radius: 70% 1.8rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+}
+.header__logo {
+  width: 8rem;
+  height: auto;
+}
+
+.lang-switch {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.lang-btn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lang-btn:hover {
+  opacity: 1;
+  color: var(--color-secondary);
+}
+.lang-btn.active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.separator {
+  color: var(--color-accent);
+  text-decoration: none;
+  opacity: 0.6;
+  font-size: 1.125rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.nav__link {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav__link--button {
+  background: #fff;
+  color: #000;
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+.nav__item + .nav__item {
+  margin-left: 1em;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .wrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+}
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.hero__logo {
+  max-width: 295px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  margin-bottom: 2.5rem;
+}
+.hero__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+@media (min-width: 768px) {
+  .hero__buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=style.css.map */

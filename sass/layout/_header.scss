@@ -1,0 +1,85 @@
+////////////////////////////////////////////
+// --- HEADER --- //
+////////////////////////////////////////////
+
+.header {
+  background: var(--color-primary);
+  padding: 1em 0;
+
+  max-height: 11vh;
+  width: 100%;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: var(--color-primary);
+
+  // Flexbox: Logo links, Language switcher rechts
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+
+  //////// HEADER ROUNDED ////////
+  ////////////////////////////////
+
+  // Die Rundung (Tiefe der Kurve: 2.5rem = 40px)
+  border-bottom-left-radius: 70% 1.8rem;
+  border-bottom-right-radius: 70% 1.8rem;
+  // Schatten: X=0 | Y=2px | Blur=4px | Farbe schwarz 5%
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
+
+  &__logo {
+    width: 8rem;
+    height: auto;
+  }
+}
+
+//////// LANGUAGES ////////
+////////////////////////////////
+
+// SCSS
+.lang-switch {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem; // Kleiner Abstand zwischen den Elementen
+}
+
+.lang-btn {
+  text-decoration: none;
+  background: none;
+  border: none;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.75rem 1rem; // Touch-friendly padding
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-accent); // Dunkelgrün
+  cursor: pointer;
+  opacity: 0.6; // Inaktive Sprachen etwas zurücknehmen
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    opacity: 1;
+    color: var(--color-secondary); // Rot bei Hover
+  }
+
+  &.active {
+    opacity: 1;
+    font-weight: 700; // Fett markiert die aktuelle Sprache
+  }
+}
+
+.separator {
+  color: var(--color-accent);
+  text-decoration: none;
+  opacity: 0.6;
+  font-size: 1.125rem;
+}
