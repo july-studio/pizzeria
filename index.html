@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="description text." />
+    <meta
+      name="description"
+      content="La Casita Italiana - Pizza romana autentica per take away a Ibiza. Tradizione italiana dal 2021 con prodotti 100% italiani."
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Preload critical resources -->
+    <link
+      rel="preload"
+      href="fonts/montserrat-v31-latin-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="css/style.css" as="style" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 
@@ -51,6 +65,8 @@
           alt="Pizza Background"
           class="hero__bg"
           fetchpriority="high"
+          width="740"
+          height="649"
         />
 
         <div class="wrapper">
@@ -66,11 +82,12 @@
               class="hero__logo"
               width="295"
               height="102"
+              fetchpriority="high"
             />
           </picture>
 
-          <div class="hero__content">
-            <h1>La vera pizza di Roma a Ibiza!</h1>
+          <div class="hero__content flex">
+            <h1>Take away<br />la vera pizza<br />di Roma!</h1>
 
             <div class="hero__buttons">
               <a href="#menu" class="btn btn--primary">
@@ -78,6 +95,8 @@
                   src="img/icon-pizza.svg"
                   alt="Icon pizza"
                   class="btn__icon"
+                  width="20"
+                  height="20"
                 />
                 Vedi il menu
               </a>
@@ -86,6 +105,8 @@
                   src="img/icon-maps.svg"
                   alt="Icon Pin für Maps"
                   class="btn__icon"
+                  width="24"
+                  height="24"
                 />
                 Dove siamo
               </a>
@@ -94,16 +115,48 @@
         </div>
       </section>
 
-      <section class="story">
+      <article class="story">
         <div class="wrapper">
-          <h2>Cucina Autentica</h2>
-          <p>...</p>
+          <div>
+            <span>dal 2021</span>
+          </div>
+          <div>
+            <h2>Cucina autentica</h2>
+            <p>
+              Tre donne, un’unica passione. Portiamo in tavola
+              <strong>la vera tradizione italiana</strong> con tutto il cuore.
+              Così nasce il <strong>sapore vero.</strong>
+            </p>
+          </div>
+          <div>
+            <h3 class="text-right">3 generazioni</h3>
+            <figure class="story__img">
+              <img
+                src="img/card-story-famiglia.webp"
+                alt="3 Frauen einer Familie kochen zusammen in der Küche"
+                class="story__img"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="400"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+            </figure>
+          </div>
+          <div>
+            <h3>Prodotti 100% italiani</h3>
+            <p>
+              Dalla <strong>mozzarella fresca</strong> ai
+              <strong>pomodori maturati al sole</strong>: importiamo ogni
+              singolo ingrediente direttamente dall'Italia.
+            </p>
+          </div>
         </div>
-      </section>
+      </article>
 
-      <section class="menu">
+      <section class="menu" id="menu">
         <div class="wrapper">
-          <h2>Il nostro Menu</h2>
+          <h2><span>Il nostro</span>Menu</h2>
           <div class="pizza-grid">...</div>
         </div>
       </section>
@@ -127,6 +180,6 @@
         />
       </svg>
     </a>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

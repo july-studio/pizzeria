@@ -18,11 +18,13 @@ h6 {
 h1 {
   color: var(--color-primary);
   text-align: center;
+  line-height: 1.44;
+  font-size: 1.75rem;
 }
 
 h2 {
   font-size: 3rem; // 48px
-  font-weight: 700; // Bold
+  font-weight: 600; // SemiBold
   text-transform: uppercase;
 }
 

@@ -1,8 +1,10 @@
 // --- Sections ---
 
-section {
-  width: 100%; // Geht immer über die volle Breite (für Hintergrundfarben)
+section,
+article {
+  width: 100%; // für Hintergrundfarben)
   padding: 5rem 0;
+  box-sizing: border-box;
 }
 
 // --- Container für ganzen Bildchirm ---
@@ -16,7 +18,8 @@ section {
 
 .flex {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 

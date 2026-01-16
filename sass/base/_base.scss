@@ -25,6 +25,7 @@ body {
   color: var(--color-accent-paragraph);
   background-color: var(--color-bg);
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 img {

@@ -1,0 +1,73 @@
+//////////////////////////
+/// --- CARD STORY --- ///
+//////////////////////////
+
+.story {
+  padding: 2.5rem 1.5rem;
+
+  // Wrapper bekommt die rote Karte
+  .wrapper {
+    background-color: var(--color-secondary);
+    position: relative;
+    border-radius: 1.75rem;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem 2rem 6.5rem 2rem;
+    margin: 0 auto;
+    max-width: 40rem;
+  }
+
+  // DIVs innerhalb der Card
+  .wrapper > div {
+    margin-bottom: 5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Elemente innerhalb der DIVs (h2, h3, p, figure)
+    > * {
+      margin-bottom: 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // H2 Styling
+  h2 {
+    text-transform: none;
+    line-height: 1.2;
+  }
+
+  /////// Separator ///////
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--color-primary);
+
+    // Die Linien links und rechts
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      flex: 1;
+      background-color: var(--color-primary);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}

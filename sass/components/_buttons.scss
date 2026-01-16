@@ -16,11 +16,20 @@
   gap: 0.5rem;
   box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.05);
   max-height: 3.4rem;
+  min-width: 100%;
 }
 
 .btn--secondary {
   background-color: var(--color-primary);
   color: var(--color-accent);
+}
+
+////////////////////////////////
+/////////// Scroll-Anchor ///////////
+////////////////////////////////
+
+#menu {
+  scroll-margin-top: 4rem;
 }
 
 ////////////////////////////////
