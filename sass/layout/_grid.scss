@@ -3,8 +3,12 @@
 section,
 article {
   width: 100%; // für Hintergrundfarben)
-  padding: 5rem 0;
+  padding: 3rem 0;
   box-sizing: border-box;
+
+  @media (min-width: 48rem) {
+    padding: 5rem 0;
+  }
 }
 
 // --- Container für ganzen Bildchirm ---

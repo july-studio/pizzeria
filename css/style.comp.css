@@ -192,6 +192,7 @@ p {
 
 .story {
   padding: 2.5rem 1.5rem;
+  margin: 0;
 }
 .story .wrapper {
   background-color: var(--color-secondary);
@@ -246,8 +247,14 @@ p {
 section,
 article {
   width: 100%;
-  padding: 5rem 0;
+  padding: 3rem 0;
   box-sizing: border-box;
+}
+@media (min-width: 48rem) {
+  section,
+  article {
+    padding: 5rem 0;
+  }
 }
 
 .wrapper {
@@ -445,6 +452,16 @@ article {
   .hero__buttons .hero__logo {
     max-width: 30rem;
   }
+}
+
+.menu h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-secondary);
+}
+.menu h2 span {
+  color: var(--color-accent);
 }
 
 /*# sourceMappingURL=style.comp.css.map */
