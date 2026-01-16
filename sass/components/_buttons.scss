@@ -1,27 +1,68 @@
 .btn {
-  display: inline-block;
-  text-decoration: none;
-  background-color: var(--color-secondary);
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--color-primary);
-  padding: 1rem 2.5rem;
-  border-radius: 22px;
-  font-size: 1.125rem;
-  letter-spacing: 0;
-  line-height: 1.5;
+  // Layout
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.05);
-  max-height: 3.4rem;
+  min-height: 3rem; // 48px Touch Target (Apple minimum 44px)
   min-width: 100%;
+  padding: 1rem 2.5rem;
+
+  // Appearance
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 22px;
+  box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.05);
+
+  // Typography
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-decoration: none;
+
+  // Interaction
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  // Focus für Keyboard-Navigation
+  &:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  // Touch Feedback
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn--primary-accent {
+  background-color: var(--color-accent);
 }
 
 .btn--secondary {
   background-color: var(--color-primary);
   color: var(--color-accent);
+}
+
+.btn--menu {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 2px solid var(--color-secondary);
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  @media (min-width: 48rem) {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
 }
 
 ////////////////////////////////

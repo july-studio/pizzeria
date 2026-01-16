@@ -113,18 +113,32 @@
 ///
 
 .menu {
+  &__btn {
+    padding-top: 3rem;
+    gap: 1.5rem;
+
+    .btn--primary-accent {
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
   h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 1.5;
     color: var(--color-secondary);
-    color: #c32825;
 
     span {
       color: var(--color-accent);
       font-size: 1rem;
       font-weight: 400;
+      text-transform: none;
     }
 
     &::after {
@@ -135,5 +149,78 @@
       margin-top: 2rem;
       background-color: var(--color-secondary);
     }
+  }
+}
+
+//////////////////////
+/// ACCORDION
+//////////////////////
+
+.accordion__item {
+  width: 100%;
+}
+
+.accordion__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1rem;
+
+  &.is-open {
+    max-height: 1000px;
+    padding: 1.5rem 1rem;
+  }
+}
+
+.menu__arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn--menu[aria-expanded="true"] {
+  .menu__arrow {
+    transform: rotate(180deg);
+  }
+}
+
+//////////////////////
+/// MENU GRID
+//////////////////////
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.25rem 1rem;
+
+  @media (min-width: 48rem) {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  &__name {
+    color: var(--color-accent-menu);
+    // Fluid: 1.125rem @ 320px → 1.25rem @ 768px
+    font-size: clamp(1.125rem, 1rem + 0.25vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  &__price {
+    color: var(--color-accent-menu);
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  &__desc {
+    grid-column: span 2;
+    color: var(--color-accent-paragraph);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.75;
+    margin: 0;
   }
 }

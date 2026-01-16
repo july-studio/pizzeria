@@ -71,3 +71,24 @@ menuLinks.forEach((anchor) => {
     }
   });
 });
+
+// ==========================================
+// 3. Accordion Menu
+// ==========================================
+
+const accordionButtons = document.querySelectorAll(".btn--menu");
+
+accordionButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const content = this.nextElementSibling;
+    const isExpanded = this.getAttribute("aria-expanded") === "true";
+
+    // Toggle aria-expanded
+    this.setAttribute("aria-expanded", !isExpanded);
+
+    // Toggle content visibility
+    if (content) {
+      content.classList.toggle("is-open");
+    }
+  });
+});

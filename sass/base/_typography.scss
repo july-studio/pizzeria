@@ -19,18 +19,21 @@ h1 {
   color: var(--color-primary);
   text-align: center;
   line-height: 1.44;
-  font-size: 1.75rem;
+  // Fluid: 1.5rem (24px) @ 320px → 1.75rem (28px) @ 768px
+  font-size: clamp(1.5rem, 1.3rem + 0.5vw, 1.75rem);
 }
 
 h2 {
-  font-size: 3rem; // 48px
+  // Fluid: 2rem (32px) @ 320px → 3rem (48px) @ 768px
+  font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
   font-weight: 600; // SemiBold
   text-transform: uppercase;
 }
 
 h3 {
   color: var(--color-primary);
-  font-size: 1.75rem; // 28px
+  // Fluid: 1.5rem (24px) @ 320px → 1.75rem (28px) @ 768px
+  font-size: clamp(1.5rem, 1.3rem + 0.5vw, 1.75rem);
   line-height: 1.44;
 }
 

@@ -17,6 +17,13 @@
       type="font/woff2"
       crossorigin
     />
+    <link
+      rel="preload"
+      href="fonts/montserrat-v31-latin-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="preload" href="css/style.css" as="style" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -27,7 +34,7 @@
   <body>
     <header>
       <div class="header">
-        <a href="#" class="header__logo" alt="Homepage">
+        <a href="#" class="header__logo">
           <picture>
             <source
               srcset="img/header-logo.webp 1x, img/header-logo@2x.webp 2x"
@@ -45,29 +52,47 @@
         </a>
 
         <nav class="lang-switch">
-          <button class="lang-btn active" aria-label="Italiano">IT</button>
+          <button type="button" class="lang-btn active" aria-label="Italiano">
+            IT
+          </button>
 
           <span class="separator">|</span>
 
-          <button class="lang-btn" aria-label="English">EN</button>
+          <button type="button" class="lang-btn" aria-label="English">
+            EN
+          </button>
 
           <span class="separator">|</span>
 
-          <button class="lang-btn" aria-label="Español">ES</button>
+          <button type="button" class="lang-btn" aria-label="Español">
+            ES
+          </button>
         </nav>
       </div>
     </header>
 
     <main>
       <section class="hero">
-        <img
-          src="img/hero-pizza.webp"
-          alt="Pizza Background"
-          class="hero__bg"
-          fetchpriority="high"
-          width="740"
-          height="649"
-        />
+        <picture>
+          <source
+            media="(max-width: 480px)"
+            srcset="img/hero-pizza.webp"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 481px)"
+            srcset="img/hero-pizza.webp 1x, img/hero-pizza@2x.webp 2x"
+            type="image/webp"
+          />
+          <img
+            src="img/hero-pizza.webp"
+            alt="Pizza Background"
+            class="hero__bg"
+            fetchpriority="high"
+            width="740"
+            height="649"
+          />
+        </picture>
 
         <div class="wrapper">
           <picture>
@@ -82,7 +107,6 @@
               class="hero__logo"
               width="295"
               height="102"
-              fetchpriority="high"
             />
           </picture>
 
@@ -91,23 +115,37 @@
 
             <div class="hero__buttons">
               <a href="#menu" class="btn btn--primary">
-                <img
-                  src="img/icon-pizza.svg"
-                  alt="Icon pizza"
+                <svg
                   class="btn__icon"
                   width="20"
                   height="20"
-                />
+                  viewBox="0 0 16 18"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M0 4.99414C0.00139772 2.3931 13.0971 -2.00387 14.2295 1.02539C14.3968 1.47299 14.5636 2.15592 14.7256 2.99512C10.7364 2.88838 7.50703 3.9773 5.20703 5.64062C4.98342 5.80241 4.93313 6.11515 5.09473 6.33887C5.25656 6.5625 5.56925 6.6129 5.79297 6.45117C7.93675 4.90076 11.0169 3.85402 14.9033 3.99902C15.7491 9.09679 16.3617 17.8848 15.7549 17.998C14.9926 18.1349 0 7.59513 0 4.99414Z"
+                    fill="#FFF1E0"
+                  />
+                </svg>
                 Vedi il menu
               </a>
               <a href="#maps" class="btn btn--secondary">
-                <img
-                  src="img/icon-maps.svg"
-                  alt="Icon Pin für Maps"
+                <svg
                   class="btn__icon"
-                  width="24"
-                  height="24"
-                />
+                  width="20"
+                  height="20"
+                  viewBox="0 0 15 22"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.662069 7.92383C-4.0784 -2.15591 18.3347 -3.11575 14.1679 7.92383C10.019 18.9159 7.72184 21.3426 7.70211 21.3633C7.67648 21.3257 5.37614 17.9472 0.662069 7.92383ZM7.34371 3.68164C5.963 3.68164 4.84371 4.80093 4.84371 6.18164C4.84371 7.56236 5.963 8.68164 7.34371 8.68164C8.72442 8.68164 9.84371 7.56236 9.84371 6.18164C9.84371 4.80093 8.72442 3.68164 7.34371 3.68164Z"
+                    fill="currentColor"
+                  />
+                </svg>
                 Dove siamo
               </a>
             </div>
@@ -157,7 +195,310 @@
       <section class="menu" id="menu">
         <div class="wrapper">
           <h2><span>Il nostro</span>Menu</h2>
-          <div class="pizza-grid">...</div>
+
+          <div class="menu__btn flex">
+            <!-- Le pizze rosse -->
+            <div class="accordion__item">
+              <button class="btn btn--menu" aria-expanded="false">
+                Le pizze rosse
+                <svg
+                  class="menu__arrow"
+                  width="21"
+                  height="8"
+                  viewBox="0 0 15 7"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1.07031 1.07227L7.07476 5.8377M13.3448 1.07227L7.34038 5.8377"
+                    stroke="currentColor"
+                    stroke-width="2.14286"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="accordion__content">
+                <figure class="menu__img">
+                  <img
+                    src="img/pizze-rosse.webp"
+                    alt="3 Pizze rosse"
+                    class="menu__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="280"
+                    height="130"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
+                </figure>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Margherita</span>
+                  <span class="menu-grid__price">9€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, fior di latte, basilico e olio extra
+                    vergine di oliva
+                  </p>
+                </div>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Primavera</span>
+                  <span class="menu-grid__price">7€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, pomodorini, origano, e stracciatella di
+                    bufala
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Le pizze bianche -->
+            <div class="accordion__item">
+              <button class="btn btn--menu" aria-expanded="false">
+                Le pizze bianche
+                <svg
+                  class="menu__arrow"
+                  width="21"
+                  height="8"
+                  viewBox="0 0 15 7"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1.07031 1.07227L7.07476 5.8377M13.3448 1.07227L7.34038 5.8377"
+                    stroke="currentColor"
+                    stroke-width="2.14286"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="accordion__content">
+                <figure class="menu__img">
+                  <img
+                    src="img/pizze-rosse.webp"
+                    alt="3 Pizze rosse"
+                    class="menu__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="280"
+                    height="130"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
+                </figure>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Margherita</span>
+                  <span class="menu-grid__price">9€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, fior di latte, basilico e olio extra
+                    vergine di oliva
+                  </p>
+                </div>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Primavera</span>
+                  <span class="menu-grid__price">7€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, pomodorini, origano, e stracciatella di
+                    bufala
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Cibo espresso -->
+            <div class="accordion__item">
+              <button class="btn btn--menu" aria-expanded="false">
+                Cibo espresso
+                <svg
+                  class="menu__arrow"
+                  width="21"
+                  height="8"
+                  viewBox="0 0 15 7"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1.07031 1.07227L7.07476 5.8377M13.3448 1.07227L7.34038 5.8377"
+                    stroke="currentColor"
+                    stroke-width="2.14286"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="accordion__content">
+                <figure class="menu__img">
+                  <img
+                    src="img/pizze-rosse.webp"
+                    alt="3 Pizze rosse"
+                    class="menu__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="280"
+                    height="130"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
+                </figure>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Margherita</span>
+                  <span class="menu-grid__price">9€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, fior di latte, basilico e olio extra
+                    vergine di oliva
+                  </p>
+                </div>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Primavera</span>
+                  <span class="menu-grid__price">7€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, pomodorini, origano, e stracciatella di
+                    bufala
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Le bevande -->
+            <div class="accordion__item">
+              <button class="btn btn--menu" aria-expanded="false">
+                Le bevande
+                <svg
+                  class="menu__arrow"
+                  width="21"
+                  height="8"
+                  viewBox="0 0 15 7"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M1.07031 1.07227L7.07476 5.8377M13.3448 1.07227L7.34038 5.8377"
+                    stroke="currentColor"
+                    stroke-width="2.14286"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div class="accordion__content">
+                <figure class="menu__img">
+                  <img
+                    src="img/pizze-rosse.webp"
+                    alt="3 Pizze rosse"
+                    class="menu__img"
+                    loading="lazy"
+                    decoding="async"
+                    width="280"
+                    height="130"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
+                </figure>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Margherita</span>
+                  <span class="menu-grid__price">9€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, fior di latte, basilico e olio extra
+                    vergine di oliva
+                  </p>
+                </div>
+                <div class="menu-grid">
+                  <span class="menu-grid__name">Primavera</span>
+                  <span class="menu-grid__price">7€</span>
+                  <p class="menu-grid__desc">
+                    Salsa di pomodoro, pomodorini, origano, e stracciatella di
+                    bufala
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/4917684982739"
+              class="btn btn--primary-accent"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="btn__icon"
+                width="20"
+                height="20"
+                viewBox="0 0 448 512"
+                aria-hidden="true"
+              >
+                <path
+                  fill="currentColor"
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-4-10.5-6.7z"
+                />
+              </svg>
+              Ordina e ritira
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="gallery flex">
+          <picture>
+            <source
+              srcset="img/pizzeria.webp 1x, img/pizzeria@2x.webp 2x"
+              type="image/webp"
+            />
+            <img
+              src="img/pizzeria.png"
+              srcset="img/pizzeria.png 1x, img/pizzeria@2x.png 2x"
+              alt="pizzeria"
+              width="310"
+              height="201"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <picture>
+            <source
+              srcset="img/polpette.webp 1x, img/polpette@2x.webp 2x"
+              type="image/webp"
+            />
+            <img
+              src="img/polpette.png"
+              srcset="img/polpette.png 1x, img/polpette@2x.png 2x"
+              alt="polpette"
+              width="310"
+              height="201"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+          <!-- 2 weitere Bilder -->
+        </div>
+      </section>
+      <article class="card-catering">
+        <div class="wrapper">
+          <div>
+            <h2><span>I nostri</span>Servizi</h2>
+            <p>
+              Portiamo la vera pizza di Roma alla tua festa! Compleanni,
+              matrimonio o ad eventi aziendali.
+            </p>
+          </div>
+          <div>
+            <figure class="catering__img">
+              <img
+                src="img/catering.webp"
+                alt="catering"
+                class="card-catering__img"
+                loading="lazy"
+                decoding="async"
+                width="278"
+                height="241"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+            </figure>
+          </div>
+          <button class="btn btn--secondary">
+            <img
+              src="img/icon-pizza.svg"
+              alt="Icon pizza"
+              class="btn__icon"
+              width="20"
+              height="20"
+            />
+            Catering a ibiza
+          </button>
+        </div>
+      </article>
+
+      <!-- Maps Section -->
+      <section id="maps" class="maps">
+        <div class="wrapper">
+          <!-- Google Maps oder Adresse hier einfügen -->
         </div>
       </section>
     </main>
