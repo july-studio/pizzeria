@@ -458,10 +458,22 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 1.5;
   color: var(--color-secondary);
+  color: #c32825;
 }
 .menu h2 span {
   color: var(--color-accent);
+  font-size: 1rem;
+  font-weight: 400;
+}
+.menu h2::after {
+  content: "";
+  display: block;
+  min-width: 70%;
+  height: 2px;
+  margin-top: 2rem;
+  background-color: var(--color-secondary);
 }
 
 /*# sourceMappingURL=style.comp.css.map */
